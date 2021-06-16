@@ -1,7 +1,7 @@
 package com.przesylki.parcel.manager;
 
 import com.przesylki.parcel.dao.ParcelRepository;
-import com.przesylki.parcel.dao.entity.Parcel;
+import com.przesylki.parcel.dao.entity.ParcelInternalModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,17 +15,16 @@ public class ParcelManager {
         this.parcelRepository = parcelRepository;
     }
 
-    public Iterable<Parcel> findAll() {
+    public Iterable<ParcelInternalModel> findAll() {
         return parcelRepository.findAll();
     }
 
-    public Parcel save(Parcel parcel){
-        return parcelRepository.save(parcel);
+    public ParcelInternalModel save(ParcelInternalModel parcelInternalModel){
+        return parcelRepository.save(parcelInternalModel);
     }
 
-    public boolean deleteById(Long id){
+    public void deleteById(Long id){
          parcelRepository.deleteById(id);
-        return false;
     }
 
 }

@@ -1,6 +1,6 @@
 package com.przesylki.parcel.mapper;
 
-import com.przesylki.parcel.dao.entity.Parcel;
+import com.przesylki.parcel.dao.entity.ParcelInternalModel;
 import com.przesylki.parcel.request.ParcelRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,15 +9,15 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 class ParcelRequestMapperTest {
 
-    private  ParcelRequestMapper parcelRequestMapper;
+    private ParcelRequestMapper parcelRequestMapper;
 
     @BeforeEach
-    void SetUp(){
+    void SetUp() {
         this.parcelRequestMapper = new ParcelRequestMapper();
     }
 
     @Test
-    void returnNullWhenParcelRequestIsNull(){
+    void returnNullWhenParcelRequestIsNull() {
 
         //given
 
@@ -29,17 +29,17 @@ class ParcelRequestMapperTest {
     }
 
     @Test
-    void returnNullWhenParcelPostCodeIsMinus(){
+    void returnNullWhenParcelPostCodeIsMinus() {
 
         //given
         ParcelRequest parcelRequest = new ParcelRequest();
         parcelRequest.setPostcode(-213);
 
         //when
-        Parcel parcel = parcelRequestMapper.mapToParcel(parcelRequest);
+        ParcelInternalModel result = parcelRequestMapper.mapToParcel(parcelRequest);
 
         //then
-        assertNull(parcel);
+        assertNull(result);
     }
 
 }

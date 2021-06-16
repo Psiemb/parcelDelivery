@@ -1,13 +1,12 @@
 package com.przesylki.parcel.dao.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 @Entity
-public class Parcel {
+@Table(name = "parcel")
+public class ParcelInternalModel {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -24,10 +23,10 @@ public class Parcel {
     private Size size;
     private boolean safeDelivery;
 
-    public Parcel() {
+    public ParcelInternalModel() {
     }
 
-    public Parcel(Long id, Date date, int postcode, String city, String streetName, String homeNo, String flatNo, Size size, boolean safeDelivery) {
+    public ParcelInternalModel(Long id, Date date, int postcode, String city, String streetName, String homeNo, String flatNo, Size size, boolean safeDelivery) {
         this.id = id;
         this.date = date;
         this.postcode = postcode;

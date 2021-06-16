@@ -2337,3 +2337,11 @@ Wrong user name or password [28000-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 55 more
+2021-06-13 21:56:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "PARCEL_INTERNAL_MODEL" nie istnieje
+Table "PARCEL_INTERNAL_MODEL" not found; SQL statement:
+select parcelinte0_.id as id1_0_0_, parcelinte0_.city as city2_0_0_, parcelinte0_.date as date3_0_0_, parcelinte0_.flat_no as flat_no4_0_0_, parcelinte0_.home_no as home_no5_0_0_, parcelinte0_.postcode as postcode6_0_0_, parcelinte0_.safe_delivery as safe_del7_0_0_, parcelinte0_.size as size8_0_0_, parcelinte0_.street_name as street_n9_0_0_ from parcel_internal_model parcelinte0_ where parcelinte0_.id=? [42102-200]
+2021-06-13 22:44:47 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabela "PARCELS" nie istnieje
+Table "PARCELS" not found; SQL statement:
+Select * FROM PARCELS [42102-200]
