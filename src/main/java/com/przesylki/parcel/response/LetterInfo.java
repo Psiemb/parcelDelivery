@@ -22,4 +22,5 @@ public class LetterInfo {
     public void setLetters(List<Letter> letters) {
         this.letters = letters;
     }
+
 }

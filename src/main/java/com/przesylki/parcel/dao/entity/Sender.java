@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Sender {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
