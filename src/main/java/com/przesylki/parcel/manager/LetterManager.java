@@ -19,4 +19,8 @@ public class LetterManager {
         return letterRepository.save(letter);
     }
 
+    public Iterable<Letter> getAll() {
+        return letterRepository.findAll();
+    }
+
 }
