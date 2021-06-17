@@ -14,6 +14,10 @@ public class Letter {
     @JoinColumn(name = "sender_id", referencedColumnName = "id")
     private Sender sender;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "senderAddress_id", referencedColumnName = "id")
+    private SenderAddress senderAddress;
+
     public Letter() {
     }
 
