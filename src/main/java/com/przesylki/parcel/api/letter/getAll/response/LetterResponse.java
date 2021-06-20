@@ -1,53 +1,16 @@
-package com.przesylki.parcel.dao.entity;
+package com.przesylki.parcel.api.letter.getAll.response;
 
-import javax.persistence.*;
+import com.przesylki.parcel.dao.entity.*;
 
-@Entity
-public class Letter {
+public class LetterResponse {
 
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "sender_id", referencedColumnName = "id")
     private Sender sender;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "senderAddress_id", referencedColumnName = "id")
     private SenderAddress senderAddress;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "receiver_id",  referencedColumnName = "id")
     private Receiver receiver;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "receiverAddress_id", referencedColumnName = "id")
     private ReceiverAddress receiverAddress;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "createdAt_id", referencedColumnName = "id")
     private CreatedAt createdAt;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "update_id", referencedColumnName = "id")
     private UpdatedAt updatedAt;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "information_id", referencedColumnName = "id")
     private Information information;
-
-    public Letter() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Sender getSender() {
         return sender;
