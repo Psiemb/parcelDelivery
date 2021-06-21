@@ -37,7 +37,7 @@ public class LetterController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
 
-        Letter letter = letterRequestMapper.maptoLetter(letterRequest);
+        Letter letter = letterRequestMapper.mapToLetter(letterRequest);
         letterManager.add(letter);
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
@@ -53,10 +53,6 @@ public class LetterController {
 
         LetterInfoMapper letterInfoMapper = new LetterInfoMapper();
         LetterInfo letterInfo = letterInfoMapper.mapToResponse(result);
-
-
-//        ParcelInfoMapper parcelInfoMapper = new ParcelInfoMapper();
-//        ParcelInfo parcelInfoResponse = parcelInfoMapper.mapToResponse(result);
 
         return ResponseEntity.status(HttpStatus.OK).body(letterInfo);
     }

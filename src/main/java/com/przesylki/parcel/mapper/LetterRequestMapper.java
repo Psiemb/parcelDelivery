@@ -1,11 +1,7 @@
 package com.przesylki.parcel.mapper;
 
-import com.przesylki.parcel.api.letter.addLetter.request.LetterRequest;
-import com.przesylki.parcel.api.letter.addLetter.request.Sender2;
-import com.przesylki.parcel.api.letter.addLetter.request.SenderAddress2;
-import com.przesylki.parcel.dao.entity.Letter;
-import com.przesylki.parcel.dao.entity.Sender;
-import com.przesylki.parcel.dao.entity.SenderAddress;
+import com.przesylki.parcel.api.letter.addLetter.request.*;
+import com.przesylki.parcel.dao.entity.*;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
@@ -13,7 +9,7 @@ import java.util.Objects;
 @Component
 public class LetterRequestMapper {
 
-    public Letter maptoLetter(LetterRequest letterRequest) {
+    public Letter mapToLetter(LetterRequest letterRequest) {
         if (Objects.isNull(letterRequest)) {
             return null;
         }
@@ -32,16 +28,47 @@ public class LetterRequestMapper {
         senderAddressEntity.setFlatNumber(senderAddress2.getFlatNumber());
         senderAddressEntity.setPostcode(senderAddress2.getPostcode());
 
+        Receiver2 receiver2 = new Receiver2();
 
+        Receiver receiverEntity = new Receiver();
+        receiverEntity.setName(receiver2.getName());
+        receiverEntity.setSurname(receiver2.getSurname());
+        receiverEntity.setPhoneNumber(receiver2.getPhoneNumber());
+        receiverEntity.setEmail(receiver2.getEmail());
+
+        ReceiverAddress2 receiverAddress2 = new ReceiverAddress2();
+
+        ReceiverAddress receiverAddressEntity = new ReceiverAddress();
+        receiverAddressEntity.setPostCode(receiverAddress2.getPostCode());
+        receiverAddressEntity.setCity(receiverAddress2.getCity());
+        receiverAddressEntity.setStreet(receiverAddress2.getStreet());
+        receiverAddressEntity.setBuildingNumber(receiverAddress2.getBuildingNumber());
+        receiverAddressEntity.setFlatNumber(receiverAddress2.getFlatNumber());
+
+        CreatedAt2 createdAt2 = new CreatedAt2();
+
+        CreatedAt createdAtEntity = new CreatedAt();
+        createdAtEntity.setCreateDate(createdAt2.getCreateDate());
+
+        UpdatedAt2 updatedAt2 = new UpdatedAt2();
+
+        UpdatedAt updatedAtEntity = new UpdatedAt();
+        updatedAtEntity.setUpdateDate(updatedAt2.getUpdateDate());
+
+        Information2 information2 = new Information2();
+
+        Information informationEntity = new Information();
+        informationEntity.setSize(information2.getSize());
+        informationEntity.setType(information2.getType());
 
         Letter letter = new Letter();
         letter.setSender(senderEntity);
-        letter.setSenderAddress(letterRequest.getSenderAddress2().);
-//        letter.setReceiver(letterRequest.getReceiver());
-//        letter.setReceiverAddress(letterRequest.getReceiverAddress());
-//        letter.setCreatedAt(letterRequest.getCreatedAt());
-//        letter.setUpdatedAt(letterRequest.getUpdatedAt());
-//        letter.setInformation(letterRequest.getInformation());
+        letter.setSenderAddress(senderAddressEntity);
+        letter.setReceiver(receiverEntity);
+        letter.setReceiverAddress(receiverAddressEntity);
+        letter.setCreatedAt(createdAtEntity);
+        letter.setUpdatedAt(updatedAtEntity);
+        letter.setInformation(informationEntity);
 
         return letter;
 
