@@ -56,10 +56,10 @@ class LetterInfoMapperTest {
     void returnNullWhenElementOnListIsEmpty() {
 
         //given
-        Letter letter = new Letter();
         Sender sender = new Sender();
         sender.setSurname("");
-        List<Letter> letters = Arrays.asList(new Letter());
+//        Letter letter = new Letter();
+        List<Letter> letters = Arrays.asList(new Letter(),new Letter());
 
         //when
         LetterInfo letterInfo = letterInfoMapper.mapToResponse(letters);
@@ -68,5 +68,7 @@ class LetterInfoMapperTest {
 
         assertNotNull(letterInfo);
     }
+
+
 
 }

@@ -4,7 +4,7 @@ public class Receiver2 {
 
     private String name;
     private String surname;
-    private  String phoneNumber;
+    private String phoneNumber;
     private String email;
 
     public String getName() {

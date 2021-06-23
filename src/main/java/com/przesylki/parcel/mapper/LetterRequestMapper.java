@@ -3,14 +3,16 @@ package com.przesylki.parcel.mapper;
 import com.przesylki.parcel.api.letter.addLetter.request.*;
 import com.przesylki.parcel.dao.entity.*;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 
+import java.util.Collection;
 import java.util.Objects;
 
 @Component
 public class LetterRequestMapper {
 
     public Letter mapToLetter(LetterRequest letterRequest) {
-        if (Objects.isNull(letterRequest)) {
+        if (Objects.isNull(letterRequest) || Objects.isNull(letterRequest.getSender2())) {
             return null;
         }
         Sender2 sender2 = letterRequest.getSender2();
