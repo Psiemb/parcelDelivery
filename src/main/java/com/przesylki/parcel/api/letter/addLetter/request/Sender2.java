@@ -1,9 +1,15 @@
 package com.przesylki.parcel.api.letter.addLetter.request;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class Sender2 {
 
+    @NotBlank
     private String surname2;
+    @NotBlank
     private int phoneNumber2;
+    @NotBlank
     private String email2;
 
     public String getSurname2() {
