@@ -62,5 +62,6 @@ class LetterRequestMapperTest {
 
         assertNull(letter);
 
+
     }
 }
