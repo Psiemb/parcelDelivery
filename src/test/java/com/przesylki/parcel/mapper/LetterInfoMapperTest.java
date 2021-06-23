@@ -69,5 +69,4 @@ class LetterInfoMapperTest {
         assertNotNull(letterInfo);
     }
 
-
 }
