@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -31,7 +32,7 @@ public class LetterController {
     }
 
     @PostMapping("/addLetter")
-    public ResponseEntity<Void> addLetter(@RequestBody LetterRequest letterRequest) {
+    public ResponseEntity<Void> addLetter(@RequestBody @Valid LetterRequest letterRequest) {
         if (Objects.isNull(letterRequest)) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }

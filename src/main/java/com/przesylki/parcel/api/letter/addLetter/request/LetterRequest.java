@@ -1,13 +1,22 @@
 package com.przesylki.parcel.api.letter.addLetter.request;
 
+import javax.validation.constraints.NotNull;
+
 public class LetterRequest {
 
+    @NotNull
     private Sender2 sender2;
+    @NotNull
     private SenderAddress2 senderAddress2;
+    @NotNull
     private Receiver2 receiver2;
+    @NotNull
     private ReceiverAddress2 receiverAddress2;
+    @NotNull
     private CreatedAt2 createdAt2;
+    @NotNull
     private UpdatedAt2 updatedAt2;
+    @NotNull
     private Information2 information2;
 
     public Sender2 getSender2() {
