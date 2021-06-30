@@ -12,8 +12,16 @@ public class UpdatedAt {
 
     private Date updateDate;
 
-    @OneToOne(mappedBy = "updatedAt")
-    private Letter letter;
+//    @OneToOne(mappedBy = "updatedAt")
+//    private Letter letter;
+
+
+    public UpdatedAt() {
+    }
+
+    public UpdatedAt(Date updateDate) {
+        this.updateDate = updateDate;
+    }
 
     public Long getId() {
         return id;
@@ -31,11 +39,11 @@ public class UpdatedAt {
         this.updateDate = updateDate;
     }
 
-    public Letter getLetter() {
-        return letter;
-    }
-
-    public void setLetter(Letter letter) {
-        this.letter = letter;
-    }
+//    public Letter getLetter() {
+//        return letter;
+//    }
+//
+//    public void setLetter(Letter letter) {
+//        this.letter = letter;
+//    }
 }

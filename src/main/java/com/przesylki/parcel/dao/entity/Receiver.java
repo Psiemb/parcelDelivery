@@ -14,10 +14,17 @@ public class Receiver {
     private String phoneNumber;
     private String email;
 
-    @OneToOne(mappedBy = "receiver")
-    private Letter letter;
+//    @OneToOne(mappedBy = "receiver")
+//    private Letter letter;
 
     public Receiver() {
+    }
+
+    public Receiver(String name, String surname, String phoneNumber, String email) {
+        this.name = name;
+        this.surname = surname;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
     }
 
     public Long getId() {
@@ -60,11 +67,11 @@ public class Receiver {
         this.email = email;
     }
 
-    public Letter getLetter() {
-        return letter;
-    }
-
-    public void setLetter(Letter letter) {
-        this.letter = letter;
-    }
+//    public Letter getLetter() {
+//        return letter;
+//    }
+//
+//    public void setLetter(Letter letter) {
+//        this.letter = letter;
+//    }
 }

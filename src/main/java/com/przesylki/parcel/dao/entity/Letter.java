@@ -3,6 +3,7 @@ package com.przesylki.parcel.dao.entity;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Letter")
 public class Letter {
 
 
@@ -39,6 +40,16 @@ public class Letter {
     private Information information;
 
     public Letter() {
+    }
+
+    public Letter(Sender sender, SenderAddress senderAddress, Receiver receiver, ReceiverAddress receiverAddress, CreatedAt createdAt, UpdatedAt updatedAt, Information information) {
+        this.sender = sender;
+        this.senderAddress = senderAddress;
+        this.receiver = receiver;
+        this.receiverAddress = receiverAddress;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.information = information;
     }
 
     public Long getId() {

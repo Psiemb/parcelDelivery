@@ -12,8 +12,17 @@ public class Information {
     private int size;
     private Type type;
 
-    @OneToOne(mappedBy = "information")
-    private Letter letter;
+//    @OneToOne(mappedBy = "information")
+//    private Letter letter;
+
+
+    public Information() {
+    }
+
+    public Information(int size, Type type) {
+        this.size = size;
+        this.type = type;
+    }
 
     public Long getId() {
         return id;
@@ -39,11 +48,11 @@ public class Information {
         this.type = type;
     }
 
-    public Letter getLetter() {
-        return letter;
-    }
-
-    public void setLetter(Letter letter) {
-        this.letter = letter;
-    }
+//    public Letter getLetter() {
+//        return letter;
+//    }
+//
+//    public void setLetter(Letter letter) {
+//        this.letter = letter;
+//    }
 }

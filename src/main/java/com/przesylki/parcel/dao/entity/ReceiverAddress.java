@@ -15,10 +15,18 @@ public class ReceiverAddress {
     private String buildingNumber;
     private String flatNumber;
 
-    @OneToOne(mappedBy = "receiverAddress")
-    private Letter letter;
+//    @OneToOne(mappedBy = "receiverAddress")
+//    private Letter letter;
 
     public ReceiverAddress() {
+    }
+
+    public ReceiverAddress(String postCode, String city, String street, String buildingNumber, String flatNumber) {
+        this.postCode = postCode;
+        this.city = city;
+        this.street = street;
+        this.buildingNumber = buildingNumber;
+        this.flatNumber = flatNumber;
     }
 
     public Long getId() {
@@ -69,11 +77,11 @@ public class ReceiverAddress {
         this.flatNumber = flatNumber;
     }
 
-    public Letter getLetter() {
-        return letter;
-    }
-
-    public void setLetter(Letter letter) {
-        this.letter = letter;
-    }
+//    public Letter getLetter() {
+//        return letter;
+//    }
+//
+//    public void setLetter(Letter letter) {
+//        this.letter = letter;
+//    }
 }

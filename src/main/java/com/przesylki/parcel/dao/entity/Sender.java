@@ -12,8 +12,14 @@ public class Sender {
     private String phoneNumber;
     private String email;
 
-    @OneToOne(mappedBy = "sender")
-    private Letter letter;
+    public Sender(String surname, String phoneNumber, String email) {
+        this.surname = surname;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+//    @OneToOne(mappedBy = "sender")
+//    private Letter letter;
 
     public Sender() {
     }
@@ -50,11 +56,11 @@ public class Sender {
         this.email = email;
     }
 
-    public Letter getLetter() {
-        return letter;
-    }
-
-    public void setLetter(Letter letter) {
-        this.letter = letter;
-    }
+//    public Letter getLetter() {
+//        return letter;
+//    }
+//
+//    public void setLetter(Letter letter) {
+//        this.letter = letter;
+//    }
 }

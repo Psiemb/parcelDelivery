@@ -12,8 +12,15 @@ public class CreatedAt {
 
     private Date createDate;
 
-    @OneToOne(mappedBy = "createdAt")
-    private Letter letter;
+    public CreatedAt() {
+    }
+
+    public CreatedAt(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    //    @OneToOne(mappedBy = "createdAt")
+//    private Letter letter;
 
     public Long getId() {
         return id;
@@ -31,11 +38,11 @@ public class CreatedAt {
         this.createDate = createDate;
     }
 
-    public Letter getLetter() {
-        return letter;
-    }
-
-    public void setLetter(Letter letter) {
-        this.letter = letter;
-    }
+//    public Letter getLetter() {
+//        return letter;
+//    }
+//
+//    public void setLetter(Letter letter) {
+//        this.letter = letter;
+//    }
 }

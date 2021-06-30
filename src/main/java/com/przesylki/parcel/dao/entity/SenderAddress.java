@@ -13,14 +13,13 @@ public class SenderAddress {
     private String buildingNumber;
     private String flatNumber;
 
-    @OneToOne(mappedBy = "sender")
-    private Letter letter;
+//    @OneToOne(mappedBy = "senderAddress")
+//    private Letter letter;
 
     public SenderAddress() {
     }
 
-    public SenderAddress(Long id, String postcode, String city, String buildingNumber, String flatNumber) {
-        this.id = id;
+    public SenderAddress(String postcode, String city, String buildingNumber, String flatNumber) {
         this.postcode = postcode;
         this.city = city;
         this.buildingNumber = buildingNumber;
