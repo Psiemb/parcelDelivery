@@ -14,8 +14,8 @@ public class Receiver {
     private String phoneNumber;
     private String email;
 
-//    @OneToOne(mappedBy = "receiver")
-//    private Letter letter;
+    @OneToOne(mappedBy = "receiver")
+    private Letter letter;
 
     public Receiver() {
     }

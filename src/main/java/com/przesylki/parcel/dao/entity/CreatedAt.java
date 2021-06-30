@@ -19,8 +19,8 @@ public class CreatedAt {
         this.createDate = createDate;
     }
 
-    //    @OneToOne(mappedBy = "createdAt")
-//    private Letter letter;
+    @OneToOne(mappedBy = "createdAt")
+    private Letter letter;
 
     public Long getId() {
         return id;

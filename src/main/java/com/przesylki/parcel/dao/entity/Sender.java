@@ -18,8 +18,8 @@ public class Sender {
         this.email = email;
     }
 
-//    @OneToOne(mappedBy = "sender")
-//    private Letter letter;
+    @OneToOne(mappedBy = "sender")
+    private Letter letter;
 
     public Sender() {
     }

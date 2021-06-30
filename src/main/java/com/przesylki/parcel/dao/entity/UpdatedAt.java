@@ -12,8 +12,8 @@ public class UpdatedAt {
 
     private Date updateDate;
 
-//    @OneToOne(mappedBy = "updatedAt")
-//    private Letter letter;
+    @OneToOne(mappedBy = "updatedAt")
+    private Letter letter;
 
 
     public UpdatedAt() {

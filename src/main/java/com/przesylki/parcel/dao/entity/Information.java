@@ -12,8 +12,8 @@ public class Information {
     private int size;
     private Type type;
 
-//    @OneToOne(mappedBy = "information")
-//    private Letter letter;
+    @OneToOne(mappedBy = "information")
+    private Letter letter;
 
 
     public Information() {

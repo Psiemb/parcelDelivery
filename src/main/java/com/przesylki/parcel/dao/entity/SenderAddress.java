@@ -13,8 +13,8 @@ public class SenderAddress {
     private String buildingNumber;
     private String flatNumber;
 
-//    @OneToOne(mappedBy = "senderAddress")
-//    private Letter letter;
+    @OneToOne(mappedBy = "senderAddress")
+    private Letter letter;
 
     public SenderAddress() {
     }
