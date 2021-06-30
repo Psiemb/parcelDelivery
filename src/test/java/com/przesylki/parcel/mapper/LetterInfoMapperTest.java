@@ -86,7 +86,7 @@ class LetterInfoMapperTest {
 
         //given
         Sender sender = new Sender();
-        sender.setPhoneNumber(-21);
+        sender.setPhoneNumber("-");
         Letter letter = new Letter();
         letter.setSender(sender);
         List<Letter> letters = Arrays.asList(letter);
@@ -95,17 +95,12 @@ class LetterInfoMapperTest {
         LetterInfo letterInfo = letterInfoMapper.mapToResponse(letters);
 
         //then
-        assertNull(null);
+        assertNull(letterInfo);
     }
 
     @Test
     void returnNullWhenLettersIsNull() {
 
-        //given
-
-        //when
-
-        //then
         assertNull(letterInfoMapper.mapToResponse(null));
 
     }

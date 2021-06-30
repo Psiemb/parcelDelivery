@@ -19,7 +19,7 @@ public class Letter {
     private SenderAddress senderAddress;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "receiver_id",  referencedColumnName = "id")
+    @JoinColumn(name = "receiver_id", referencedColumnName = "id")
     private Receiver receiver;
 
     @OneToOne(cascade = CascadeType.ALL)

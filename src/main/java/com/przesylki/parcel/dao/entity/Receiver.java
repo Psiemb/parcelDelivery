@@ -11,10 +11,10 @@ public class Receiver {
 
     private String name;
     private String surname;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
 
-    @OneToOne(mappedBy ="receiver")
+    @OneToOne(mappedBy = "receiver")
     private Letter letter;
 
     public Receiver() {
@@ -44,11 +44,11 @@ public class Receiver {
         this.surname = surname;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

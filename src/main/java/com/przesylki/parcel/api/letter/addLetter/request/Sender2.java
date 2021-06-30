@@ -1,5 +1,6 @@
 package com.przesylki.parcel.api.letter.addLetter.request;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 public class Sender2 {
@@ -7,8 +8,8 @@ public class Sender2 {
     @NotBlank
     private String surname2;
     @NotBlank
-    private int phoneNumber2;
-
+    private String phoneNumber2;
+    @Email
     private String email2;
 
     public String getSurname2() {
@@ -19,11 +20,11 @@ public class Sender2 {
         this.surname2 = surname2;
     }
 
-    public int getPhoneNumber2() {
+    public String getPhoneNumber2() {
         return phoneNumber2;
     }
 
-    public void setPhoneNumber2(int phoneNumber2) {
+    public void setPhoneNumber2(String phoneNumber2) {
         this.phoneNumber2 = phoneNumber2;
     }
 

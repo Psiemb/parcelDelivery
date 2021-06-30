@@ -9,7 +9,7 @@ public class Sender {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String surname;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
 
     @OneToOne(mappedBy = "sender")
@@ -34,11 +34,11 @@ public class Sender {
         this.surname = surname;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -50,4 +50,11 @@ public class Sender {
         this.email = email;
     }
 
+    public Letter getLetter() {
+        return letter;
+    }
+
+    public void setLetter(Letter letter) {
+        this.letter = letter;
+    }
 }

@@ -40,12 +40,6 @@ class LetterRequestMapperTest {
     @Test
     void returnNullWhenLetterRequestIsNull() {
 
-        //given
-
-        //when
-
-        //then
-
         assertNull(letterRequestMapper.mapToLetter(null));
     }
 
@@ -54,7 +48,6 @@ class LetterRequestMapperTest {
 
         //given
         LetterRequest letterRequest = new LetterRequest();
-        letterRequest.setSender2(null);
 
         //when
         Letter letter = letterRequestMapper.mapToLetter(letterRequest);
@@ -69,15 +62,11 @@ class LetterRequestMapperTest {
 
         //given
         LetterRequest letterRequest = new LetterRequest();
-        Sender2 sender2 = new Sender2();
-        sender2.setSurname2(null);
 
         //when
-
         Letter letter = letterRequestMapper.mapToLetter(letterRequest);
 
         //then
-
         assertNull(letter);
     }
 }

@@ -3,8 +3,6 @@ package com.przesylki.parcel.mapper;
 import com.przesylki.parcel.api.letter.getAll.response.LetterInfo;
 import com.przesylki.parcel.api.letter.getAll.response.LetterResponse;
 import com.przesylki.parcel.dao.entity.Letter;
-import com.przesylki.parcel.dao.entity.Receiver;
-import com.przesylki.parcel.dao.entity.Sender;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
@@ -19,12 +17,26 @@ public class LetterInfoMapper {
         if (CollectionUtils.isEmpty(letters)) {
             return null;
         }
+        List<String> collect = letters.stream()
+                .filter(Objects::nonNull)
+                .filter(letter -> Objects.nonNull(letter.getSender()))
+                .map(letter -> letter.getSender().getPhoneNumber())
+                .collect(Collectors.toList());
+        List<String> collect1 = letters.stream()
+                .filter(Objects::nonNull)
+                .filter(letter -> Objects.nonNull(letter.getReceiver()))
+                .map(letter -> letter.getReceiver().getPhoneNumber())
+                .collect(Collectors.toList());
 
-        Sender sender = new Sender();
-        Receiver receiver = new Receiver();
-        if (sender.getPhoneNumber() < 0 || receiver.getPhoneNumber() < 0) {
+        if (collect.contains("-") || collect1.contains("-")) {
             return null;
         }
+
+//        Sender sender = new Sender();
+//        Receiver receiver = new Receiver();
+//        if (sender.getPhoneNumber() < 0 || receiver.getPhoneNumber() < 0) {
+//            return null;
+//        }
 
         List<LetterResponse> letterResponses = letters.stream()
                 .filter(Objects::nonNull)
