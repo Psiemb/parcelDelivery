@@ -3,6 +3,8 @@ package com.przesylki.parcel.mapper;
 import com.przesylki.parcel.api.letter.getAll.response.LetterInfo;
 import com.przesylki.parcel.api.letter.getAll.response.LetterResponse;
 import com.przesylki.parcel.dao.entity.Letter;
+import com.przesylki.parcel.dao.entity.Receiver;
+import com.przesylki.parcel.dao.entity.Sender;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
@@ -17,6 +19,13 @@ public class LetterInfoMapper {
         if (CollectionUtils.isEmpty(letters)) {
             return null;
         }
+
+        Sender sender = new Sender();
+        Receiver receiver = new Receiver();
+        if (sender.getPhoneNumber() < 0 || receiver.getPhoneNumber() < 0) {
+            return null;
+        }
+
         List<LetterResponse> letterResponses = letters.stream()
                 .filter(Objects::nonNull)
                 .map(this::toLetterResponse)

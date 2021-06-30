@@ -11,7 +11,7 @@ public class Receiver {
 
     private String name;
     private String surname;
-    private  String phoneNumber;
+    private int phoneNumber;
     private String email;
 
     @OneToOne(mappedBy ="receiver")
@@ -44,11 +44,11 @@ public class Receiver {
         this.surname = surname;
     }
 
-    public String getPhoneNumber() {
+    public int getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

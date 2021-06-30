@@ -23,5 +23,4 @@ public class LetterManager {
         return letterRepository.findAll();
     }
 
-
 }

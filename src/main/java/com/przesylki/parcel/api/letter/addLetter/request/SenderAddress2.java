@@ -1,7 +1,10 @@
 package com.przesylki.parcel.api.letter.addLetter.request;
 
+import javax.validation.constraints.NotBlank;
+
 public class SenderAddress2 {
 
+    @NotBlank
     private String postcode;
     private String city;
     private String buildingNumber;

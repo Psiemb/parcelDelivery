@@ -14,9 +14,9 @@ public class LetterRequest {
     private ReceiverAddress2 receiverAddress2;
     @NotNull
     private CreatedAt2 createdAt2;
-    @NotNull
+
     private UpdatedAt2 updatedAt2;
-    @NotNull
+
     private Information2 information2;
 
     public Sender2 getSender2() {

@@ -5,7 +5,7 @@ import java.util.List;
 public class LetterInfo {
 
     private List<LetterResponse> letters;
-    private  int numberOfLetters;
+    private int numberOfLetters;
 
     public LetterInfo() {
     }

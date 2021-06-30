@@ -3,9 +3,7 @@ package com.przesylki.parcel.mapper;
 import com.przesylki.parcel.api.letter.addLetter.request.*;
 import com.przesylki.parcel.dao.entity.*;
 import org.springframework.stereotype.Component;
-import org.springframework.util.CollectionUtils;
 
-import java.util.Collection;
 import java.util.Objects;
 
 @Component
