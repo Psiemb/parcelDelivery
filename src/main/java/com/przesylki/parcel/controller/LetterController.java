@@ -14,10 +14,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.validation.Valid;
+import javax.validation.constraints.Email;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Properties;
+
 
 @RestController
 public class LetterController {
@@ -55,6 +61,49 @@ public class LetterController {
         LetterInfo letterInfo = letterInfoMapper.mapToResponse(result);
 
         return ResponseEntity.status(HttpStatus.OK).body(letterInfo);
+    }
+
+    @PostMapping("/email")
+    public void emailToBeSend(){
+        String to = "psiemb@tlen.pl";
+        String from ="psar1987@wp.pl";
+
+        Properties prop = new Properties();
+        prop.put("mail.smtp.auth", true);
+        prop.put("mail.smtp.starttls.enable", "true");
+        prop.put("mail.smtp.host", "smtp.wp.pl");
+        prop.put("mail.smtp.port", "465");
+        prop.put("mail.smtp.ssl.trust", "smtp.wp.pl");
+
+        Session session = Session.getDefaultInstance(prop, new Authenticator()
+        {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("psar1987@wp.pl", "Psar7891!PS");
+            }
+        });
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.setRecipients(Message.RecipientType.TO, new InternetAddress[]{new InternetAddress(to)});
+            message.setSubject("Mail Subject");
+            message.setText("This is test mail");
+//            String msg = "This is my first email using JavaMailer";
+
+//            MimeBodyPart mimeBodyPart = new MimeBodyPart();
+//            mimeBodyPart.setContent(msg, "text/html");
+//
+//            Multipart multipart = new MimeMultipart();
+//            multipart.addBodyPart(mimeBodyPart);
+//
+//            message.setContent(multipart);
+
+            Transport.send(message);
+            System.out.println("Send messege succesfully.....");
+        }
+        catch (MessagingException mex){
+            mex.printStackTrace();
+
+        }
     }
 
 }
