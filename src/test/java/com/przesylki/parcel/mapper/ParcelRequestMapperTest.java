@@ -1,7 +1,7 @@
 package com.przesylki.parcel.mapper;
 
 import com.przesylki.parcel.dao.entity.ParcelInternalModel;
-import com.przesylki.parcel.request.ParcelRequest;
+import com.przesylki.parcel.api.parcel.add.request.ParcelRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

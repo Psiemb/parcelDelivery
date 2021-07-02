@@ -1,39 +1,24 @@
-package com.przesylki.parcel.response;
+package com.przesylki.parcel.api.parcel.add.request;
 
 import com.przesylki.parcel.dao.entity.Size;
 
-import java.util.Date;
+import javax.validation.constraints.NotBlank;
 
-public class ParcelResponse {
+public class ParcelRequest {
 
-    private Date date;
-    private int postcode;
+    @NotBlank
     private String city;
+
+    @NotBlank
     private String streetName;
+
+    private int postcode;
     private String homeNo;
     private String flatNo;
+    private Size size;
     private boolean safeDelivery;
 
-    public ParcelResponse(Date date, int postcode, String city, String streetName, String homeNo, String flatNo, boolean safeDelivery) {
-        this.date = date;
-        this.postcode = postcode;
-        this.city = city;
-        this.streetName = streetName;
-        this.homeNo = homeNo;
-        this.flatNo = flatNo;
-        this.safeDelivery = safeDelivery;
-    }
-
-    public ParcelResponse() {
-
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
+    public ParcelRequest() {
     }
 
     public int getPostcode() {
@@ -74,6 +59,14 @@ public class ParcelResponse {
 
     public void setFlatNo(String flatNo) {
         this.flatNo = flatNo;
+    }
+
+    public Size getSize() {
+        return size;
+    }
+
+    public void setSize(Size size) {
+        this.size = size;
     }
 
     public boolean isSafeDelivery() {

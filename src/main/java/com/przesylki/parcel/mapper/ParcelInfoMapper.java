@@ -1,8 +1,8 @@
 package com.przesylki.parcel.mapper;
 
+import com.przesylki.parcel.api.parcel.all.response.ParcelInfo;
+import com.przesylki.parcel.api.parcel.all.response.ParcelResponse;
 import com.przesylki.parcel.dao.entity.ParcelInternalModel;
-import com.przesylki.parcel.response.ParcelInfo;
-import com.przesylki.parcel.response.ParcelResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 

@@ -1,11 +1,11 @@
 package com.przesylki.parcel.controller;
 
+import com.przesylki.parcel.api.parcel.add.request.ParcelRequest;
+import com.przesylki.parcel.api.parcel.all.response.ParcelInfo;
 import com.przesylki.parcel.dao.entity.ParcelInternalModel;
 import com.przesylki.parcel.manager.ParcelManager;
 import com.przesylki.parcel.mapper.ParcelInfoMapper;
 import com.przesylki.parcel.mapper.ParcelRequestMapper;
-import com.przesylki.parcel.request.ParcelRequest;
-import com.przesylki.parcel.response.ParcelInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,6 @@ import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 @RestController
 public class ParcelController {
@@ -34,6 +33,7 @@ public class ParcelController {
 //        Iterable<Parcel> all = parcelManager.findAll();
 //        return all;
 //    }
+
     @GetMapping("/all")
     public ResponseEntity<ParcelInfo> getAll() {
         Iterable<ParcelInternalModel> all = parcelManager.findAll();
@@ -67,13 +67,13 @@ public class ParcelController {
 //                )
 //                .collect(Collectors.toList());
 
-        //mapper, który zmieni all na jakiś obiekt response
+    //mapper, który zmieni all na jakiś obiekt response
 //        return ResponseEntity.ok().body(result);
 //    }
 
     @PostMapping("/add")
     public ResponseEntity<Void> addParcel(@RequestBody @Valid ParcelRequest parcelRequest) {
-        if(Objects.isNull(parcelRequest)){
+        if (Objects.isNull(parcelRequest)) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
         ParcelInternalModel parcelInternalModel = parcelRequestMapper.mapToParcel(parcelRequest);
