@@ -1,5 +1,5 @@
 package com.przesylki.parcel.dao.entity;
 
-public enum Size {
+public enum Type {
     A, B, C
 }
