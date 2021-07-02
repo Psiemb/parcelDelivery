@@ -1,4 +1,4 @@
-package com.przesylki.parcel.response;
+package com.przesylki.parcel.api.parcel.all.response;
 
 import java.util.List;
 

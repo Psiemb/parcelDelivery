@@ -1,7 +1,6 @@
 package com.przesylki.parcel.dao.entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 @Entity
@@ -13,7 +12,6 @@ public class ParcelInternalModel {
     private Long id;
 
     private Date date;
-//    private Address address;
     private int postcode;
     private String city;
     private String streetName;

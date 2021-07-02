@@ -19,12 +19,12 @@ public class ParcelManager {
         return parcelRepository.findAll();
     }
 
-    public ParcelInternalModel save(ParcelInternalModel parcelInternalModel){
+    public ParcelInternalModel save(ParcelInternalModel parcelInternalModel) {
         return parcelRepository.save(parcelInternalModel);
     }
 
-    public void deleteById(Long id){
-         parcelRepository.deleteById(id);
+    public void deleteById(Long id) {
+        parcelRepository.deleteById(id);
     }
 
 }

@@ -1,7 +1,7 @@
 package com.przesylki.parcel.mapper;
 
+import com.przesylki.parcel.api.parcel.add.request.ParcelRequest;
 import com.przesylki.parcel.dao.entity.ParcelInternalModel;
-import com.przesylki.parcel.request.ParcelRequest;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
@@ -9,8 +9,8 @@ import java.util.Objects;
 @Component
 public class ParcelRequestMapper {
 
-    public ParcelInternalModel mapToParcel(ParcelRequest parcelRequest){
-        if(Objects.isNull(parcelRequest) || (parcelRequest.getPostcode() < 0)){
+    public ParcelInternalModel mapToParcel(ParcelRequest parcelRequest) {
+        if (Objects.isNull(parcelRequest) || (parcelRequest.getPostcode() < 0)) {
             return null;
         }
 

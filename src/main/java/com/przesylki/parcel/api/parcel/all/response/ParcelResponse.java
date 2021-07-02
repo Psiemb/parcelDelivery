@@ -1,22 +1,26 @@
-package com.przesylki.parcel.dao.entity;
+package com.przesylki.parcel.api.parcel.all.response;
 
-public class Address {
+import java.util.Date;
 
+public class ParcelResponse {
+
+    private Date date;
     private int postcode;
     private String city;
     private String streetName;
     private String homeNo;
     private String flatNo;
+    private boolean safeDelivery;
 
-    public Address() {
+    public ParcelResponse() {
     }
 
-    public Address(int postcode, String city, String streetName, String homeNo, String flatNo) {
-        this.postcode = postcode;
-        this.city = city;
-        this.streetName = streetName;
-        this.homeNo = homeNo;
-        this.flatNo = flatNo;
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public int getPostcode() {
@@ -57,5 +61,13 @@ public class Address {
 
     public void setFlatNo(String flatNo) {
         this.flatNo = flatNo;
+    }
+
+    public boolean isSafeDelivery() {
+        return safeDelivery;
+    }
+
+    public void setSafeDelivery(boolean safeDelivery) {
+        this.safeDelivery = safeDelivery;
     }
 }
